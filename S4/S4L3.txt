@@ -1,0 +1,46 @@
+PASOS PARA INSTALAR EL I2C EN LA TARJETA RASPBERRY PI
+
+$ sudo apt-get install python-smbus
+$ sudo apt-get install i2c-tools
+
+$ sudo raspi-config
+*8 Advanced Options
+*A7 I2C
+*Yes
+*Yes
+
+Nos dirigimos a la carpeta etc para editar el archivo de módulos: 
+$ sudo nano /etc/modules
+
+Vamos a añadir las siguientes 2 líneas al final del documento.
+i2c-bcm2708
+i2c-dev
+
+Editar el archivo blacklist, si no existe crearlo, si existe editarlo.
+$ sudo nano /etc/modprobe.d/raspi-blacklist.conf
+
+Tiene que quedar:
+#blacklist spi-bcm2708
+#blacklist i2c-bcm2708
+
+Editar el archivo config, si no existe crearlo, si existe editarlo.
+$ sudo nano /boot/config.txt
+
+Añadir al final del documento:
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+
+$ sudo reboot
+
+Si reiniciamos en terminal solo escribir:
+$ startx
+
+
+Para probar:
+$ sudo i2cdetect -y ?
+*En donde ? puede ser 1 o 0.
+
+
+
+
+
