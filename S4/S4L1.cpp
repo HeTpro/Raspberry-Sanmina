@@ -28,6 +28,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 #include<opencv2/imgcodecs.hpp>
 #include<stdio.h>
 #include<vector>
+#include<ctime>
 
 #include<opencv2/core/core.hpp>
 #include<opencv2/ml/ml.hpp>
@@ -74,7 +75,12 @@ int main(void)
     	compression_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
     	compression_params.push_back(9);
     	
-
+	/*obtener el tiempo actual*/
+	time_t t = time(0);
+	struct tm * now = localtime( &t);
+	
+	
+	
 	
 	/*Inicia creacion del archivo*/
 	string  buffer;
@@ -83,7 +89,7 @@ int main(void)
 
 	info << "Sanmina" << endl;
 	info << "Raspberry B+" << endl;
-	info << "Sesión 4" << endl;
+	info << (now -> tm_year + 1900) << '-' << (now -> tm_mon + 1 ) << '-' << now -> tm_mday << endl;
 	info << X << " " << Y << endl;;
 	info << Verde 				<< " " << Rojo << " " << Azul << endl;
 	info << nombre << endl;
