@@ -1,6 +1,6 @@
 
 /*
-g++ -Wall -o S4L1 S4L1.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_calib3d -lopencv_videoio -lopencv_video -lopencv_features2d -lopencv_imgcodecs
+g++ -Wall -o S4L2 S4L2.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_calib3d -lopencv_videoio -lopencv_video -lopencv_features2d -lopencv_imgcodecs
 export LD_LIBRARY_PATH=/usr/local/lib
 */
 // cp /home/rub/ET414-B/Sesion2/ejemplo1.cpp /home/rub/ET414-B/Sesion3/template.cpp
