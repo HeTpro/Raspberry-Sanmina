@@ -2,9 +2,8 @@
 
 /*
 
-
-g++ -Wall -o salida S11E2.cpp `pkg-config --cflags --libs opencv`
-
+g++ -Wall -o S4L1 S4L1.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_calib3d -lopencv_videoio -lopencv_video
+export LD_LIBRARY_PATH=/usr/local/lib
 
 */
 // cp /home/rub/ET414-B/Sesion2/ejemplo1.cpp /home/rub/ET414-B/Sesion3/template.cpp
@@ -63,6 +62,13 @@ int main(void)
 
 	if(!funciono) return -1;
 	
+	/*Parametros de conversion en imwrite*/
+	vector<int> compression_params;
+    	compression_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+    	compression_params.push_back(9);
+    	
+
+	
 	/*Inicia creacion del archivo*/
 	string  buffer;
 	ofstream info;
@@ -114,7 +120,9 @@ int main(void)
 		toma++;
 	
 		if(toma == 5){
-			imwrite(temporal, imagen);
+		 try {
+        		imwrite("alpha.png", imagen, compression_params);
+	 }
 			break;
 		}
 
