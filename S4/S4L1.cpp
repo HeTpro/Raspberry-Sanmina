@@ -128,7 +128,7 @@ int main(void)
 	
 		if(toma == 5){
 		 try {
-        		imwrite("alpha.png", imagen, compression_params);
+        		imwrite(nombre, imagen, compression_params);
 	 }
 			break;
 		}
