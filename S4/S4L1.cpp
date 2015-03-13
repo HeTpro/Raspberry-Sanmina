@@ -2,7 +2,9 @@
 
 /*
 
-g++ -Wall -o S4L1 S4L1.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_calib3d -lopencv_videoio -lopencv_video
+g++ -Wall -o S4L1 S4L1.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_calib3d -lopencv_videoio -lopencv_video -lopencv_features2d -lopencv_imgcodecs
+
+
 export LD_LIBRARY_PATH=/usr/local/lib
 
 */
@@ -21,6 +23,11 @@ export LD_LIBRARY_PATH=/usr/local/lib
 	Este es el ejemplo1 de la sesion1
 	Muestra el uso  y declaracion de clases en c++
 */
+
+#include<opencv2/opencv.hpp>
+#include<opencv2/imgcodecs.hpp>
+#include<stdio.h>
+#include<vector>
 
 #include<opencv2/core/core.hpp>
 #include<opencv2/ml/ml.hpp>
